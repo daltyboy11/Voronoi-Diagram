@@ -1,11 +1,11 @@
 import numpy as np
 import math
 from PIL import Image
-colors = np.array([[180, 0, 0], [0, 25, 200], [10, 150, 45], [100,100,100]])
+colors = np.array([[180, 0, 0], [0, 25, 200], [10, 150, 45], [100,100,100], [24,24,24]])
 dim = 512
 num_colors = 3
-points = np.array([[0, 0], [100, 350], [400, 150],[256, 256, 256]])
-metric = 'euclidean'
+points = np.array([[50, 50], [150, 350], [400, 150],[256, 256],[300,200]])
+metric = 'manhattan'
 
 def closest_point_euclidean(point):
 	minimum = float('inf')
@@ -48,20 +48,6 @@ def main():
 
 	img = Image.fromarray(plot)
 	img.show()
-
-	'''
-	r = 0.5
-	g = 0.1
-	b = 0.7
-	
-	rgbArray = np.zeros((512,512,3), 'uint8')
-	rgbArray[..., 0] = r*256
-	rgbArray[..., 1] = g*256
-	rgbArray[..., 2] = b*256
-	img = Image.fromarray(rgbArray)
-	img.save('myimg.jpeg')
-
-	'''
 
 if __name__ == "__main__":
 	main()

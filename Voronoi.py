@@ -1,11 +1,11 @@
 import numpy as np
 import math
-from PIL import Image
+from PIL import Image, ImageDraw
 colors = np.array([[180, 0, 0], [0, 25, 200], [10, 150, 45], [100,100,100], [24,24,24]])
 dim = 512
 num_colors = 3
 points = np.array([[50, 50], [150, 350], [400, 150],[256, 256],[300,200]])
-metric = 'manhattan'
+metric = 'euclidean'
 
 def closest_point_euclidean(point):
 	minimum = float('inf')
@@ -46,8 +46,13 @@ def main():
 				closest_point_index = closest_point_euclidean([i,j])
 			plot[i][j] = colors[closest_point_index]
 
+	r = 2
 	img = Image.fromarray(plot)
+	draw = ImageDraw.Draw(img)
+	for p in points:
+		draw.ellipse([p[1] - r, p[0] - r, p[1] + r, p[0] + r], fill=(255,255,255))
 	img.show()
+	img.save('myEuclideanPlot.jpeg')
 
 if __name__ == "__main__":
 	main()

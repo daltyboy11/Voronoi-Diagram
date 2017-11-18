@@ -4,3 +4,11 @@ Specify the seedpoints at the top of the file in the 'points' numpy array and th
 Example pictures are provided to show roughly what one will expect when executing the file
 
 The second implementation using k-nearest-neighbors (but only looking at closest neighbor) is WAY faster than the brute force implementation, however I cannot make a manhattan version with it. Check out the image files in this repo to get an idea of the images that can be generated! :D
+
+Here's a Voronoi plot generated using Eulidean distance
+
+![Alt text](myEuclideanPlot.jpeg?raw=true "Euclidean Voronoi Diagram")
+
+Here's a Voronoi plot generated using Manhattan distance
+
+![Alt text](myManhattanPlot.jpeg?raw=true "Euclidean Voronoi Diagranm")
